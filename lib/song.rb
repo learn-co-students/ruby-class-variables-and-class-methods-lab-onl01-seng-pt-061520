@@ -24,14 +24,9 @@ class Song
   end
 
   def self.artists
-    #returns array
+    #returns array no repeats!
     # binding.pry
     @@artists.uniq!
-    # if @@artists.!include?(artist)
-    #   @@artists << artist
-    # else
-    #   @@artists
-    # end
   end
 
   def self.genres
@@ -40,12 +35,6 @@ class Song
   end
 
   def self.genre_count
-    # if @@genre_count.has_key?(@genre)
-    #   @@genre_count[@genre] += 1
-    # else
-    #   @@genre_count[@genre] = []
-    #   @@genre_count[@genre] = 1
-    # end
     @@genres.map do |genre|
       if @@genre_count.has_key?(genre)
         @@genre_count[genre] += 1
