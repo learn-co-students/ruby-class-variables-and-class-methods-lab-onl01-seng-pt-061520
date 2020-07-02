@@ -23,25 +23,30 @@ class Song
     end
 
     def self.artists
-        unique_artists = []
-        @@artists.each do |artist|
-            unique_artists.include?(artist) ? false : unique_artists << artist
-        end
-        unique_artists
+        # unique_artists = []
+        # @@artists.each do |artist|
+        #     unique_artists.include?(artist) ? false : unique_artists << artist
+        # end
+        # unique_artists
+
+        @@artists.uniq
     end
 
     def self.genres
-        unique_genres = []
-        @@genres.each do |genre|
-            unique_genres.include?(genre) ? false : unique_genres << genre
-        end
-        unique_genres
+        # unique_genres = []
+        # @@genres.each do |genre|
+        #     unique_genres.include?(genre) ? false : unique_genres << genre
+        # end
+        # unique_genres
+
+        @@genres.uniq
     end
 
     def self.genre_count
         genre_hash = {}
         @@genres.each do |genre|
-            genre_hash.include?(genre) ? genre_hash[genre] += 1 : genre_hash[genre] = 1
+            # genre_hash.include?(genre) ? genre_hash[genre] += 1 : genre_hash[genre] = 1
+            genre_hash[genre] ? genre_hash[genre] += 1 : genre_hash[genre] = 1
         end
         genre_hash
     end
@@ -49,7 +54,8 @@ class Song
     def self.artist_count
         artist_hash = {}
         @@artists.each do |artist|
-            artist_hash.include?(artist) ? artist_hash[artist] += 1 : artist_hash[artist] = 1
+            # artist_hash.include?(artist) ? artist_hash[artist] += 1 : artist_hash[artist] = 1
+            artist_hash[artist] ? artist_hash[artist] += 1 : artist_hash[artist] = 1
         end
         artist_hash
     end
