@@ -24,7 +24,7 @@ def self.artists
   @@artists.uniq
 end 
 def self.genres
-#returns an array of all of the genres of existing songs (only uniq)s  
+  
   @@genres.uniq
 end 
 
